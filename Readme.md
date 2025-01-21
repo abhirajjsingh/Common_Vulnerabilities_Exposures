@@ -2,6 +2,8 @@
 
 This repository provides an API to retrieve and filter CVE (Common Vulnerabilities and Exposures) data from the National Vulnerability Database (NVD). The data is stored in an SQLite database and can be accessed and filtered through various endpoints.
 
+Here's the video demo for whole: https://drive.google.com/file/d/1Q_W_p2vIvf9n32AiUj_irtVaqyJdgVmN/view?usp=sharing
+
 ## **API Endpoints**
 
 ### **1. Rendering the Homepage (/)**
