@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CVE Database</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CVE Database</h1>
+            <div class="controls">
+                <div>Total Records: <span id="totalRecords">0</span></div>
+                <div>
+                    Results per page: 
+                    <select id="resultsPerPage">
+                        <option value="10">10</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search by CVE ID or Description..." onkeyup="searchCVEs()">
+        </div>
+
+        <div id="loading" class="loading">Loading...</div>
+        <div id="error" class="error">
+            <div>Error loading data. Please try again later.</div>
+            <button class="retry-button" onclick="loadCVEs()">Retry</button>
+        </div>
+
+        <div class="table-container">
+            <table id="cveTable">
+                <thead>
+                    <tr>
+                        <th>CVE ID</th>
+                        <th>Description</th>
+                        <th>Published Date</th>
+                        <th>Last Modified</th>
+                        <th>CVSS Score</th>
+                    </tr>
+                </thead>
+                <tbody id="cveTableBody">
+                    <!-- CVE data will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pagination">
+            <button id="prevPage" disabled>Previous</button>
+            <span id="pageInfo">Page 1</span>
+            <button id="nextPage">Next</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
